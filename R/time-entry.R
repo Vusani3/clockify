@@ -1,14 +1,17 @@
-#' Title
+#' Time entry
+#' Get time entry for a specific user on workspace.
 #'
-#' @param user_id
-#' @param start
-#' @param end
+#' @param user_id User identifier.
+#' @param start Starting time entry
+#' @param end Ending time entry.
 #' @param finished Whether to include only finished time intervals (intervals with both start and end time).
 #'
-#' @return
+#' @return Returns id, user_id, workspace_id, project_id, billable, description, time_start and
+#' time_end
+#'
 #' @export
 #'
-#' @examples
+#' @examples time_entries("5b0fdf2a0cb87904845dfer5")
 #' # Specify number of results per page (default: 50).
 #' \dontrun{
 #' time_entries(user_id, page_size = 200)
@@ -76,18 +79,19 @@ time_entries <- function(user_id, start = NULL, end = NULL, finished = TRUE, ...
 
 #' Insert a time entry
 #'
-#' @param workspace_id
-#' @param project_id
-#' @param user_id
-#' @param start
-#' @param end
-#' @param description
-#' @param billable
+#' @param workspace_id Workspace identifier.
+#' @param project_id Project identifier.
+#' @param user_id User identifier.
+#' @param start Starting time entry
+#' @param end Ending time entry
+#' @param description Description of the work done.
+#' @param billable Uses logic TRUE or FALSE.
 #'
-#' @return
+#' @return Returns id, user_id, workspace_id, project_id, billable, description, time_start and
+#' time_end
 #' @export
 #'
-#' @examples
+#' @examples time_entry(workspace_id = "5b3c57bt0cb2548e22e6l9mf")
 #' \dontrun{
 #' time_entry(
 #'   workspace_id = "5ef23294df73064140f60bfc",
